@@ -44,15 +44,7 @@ def text_to_audio(text):
             speaker_embeddings=selected_speaker_embedding  # Provide the selected speaker embedding
         )
 
-    # Convert mel-spectrogram to audio waveform using a vocoder
-    # Assuming you have a pre-trained vocoder (replace with your vocoder of choice)
-    # Here we assume the output mel-spectrogram is in the shape (1, n_mels, time)
-    mel_spectrogram = mel_spectrogram.unsqueeze(0)  # Add batch dimension if necessary
-
-    # Replace the following line with your vocoder's conversion method
-    audio_waveform = vocoder(mel_spectrogram)
-
-    return audio_waveform
+    return mel_spectrogram
 
 # Evaluate the TTS on the dataset
 for index in range(len(dataset)):
